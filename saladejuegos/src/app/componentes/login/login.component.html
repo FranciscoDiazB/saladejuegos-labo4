@@ -1,0 +1,18 @@
+<div class="divLogin">
+    <div class="login">
+        <h1>Sala de Juegos - Login</h1>
+    
+        <form>
+            <input type="text" name="u" placeholder="Email" [(ngModel)]="email"/>
+            <input type="password" name="p" placeholder="Contraseña" [(ngModel)]="password"/>
+            <button (click)="login('home')" class="btn btn-primary btn-block btn-large">Ingresar</button>
+        </form>
+
+        <a href="registro"><br><p style="text-align: center; color: #00aeff;">¿No tiene cuenta? Registre un nuevo usuario</p></a>
+
+        @if (flagMsg != '') {
+            <br><p style="text-align: center; color: azure;">{{flagMsg}}</p>
+        }
+    
+    </div>
+</div>
