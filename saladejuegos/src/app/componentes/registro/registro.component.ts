@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter, inject} from '@angular/core';
 import { Auth , createUserWithEmailAndPassword, signInWithEmailAndPassword} from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +18,9 @@ export class RegistroComponent {
   errorMessage:string = '';
   flagError:boolean = false;
 
-  constructor(private router:Router, public auth:Auth){
+  dataAuth = inject(AuthService);
+
+  constructor(private router:Router){
 
   }
 
@@ -26,9 +29,9 @@ export class RegistroComponent {
   }
 
   Register(){
-    createUserWithEmailAndPassword(this.auth, this.email, this.password).then((res) => {
+    createUserWithEmailAndPassword(this.dataAuth.authData, this.email, this.password).then((res) => {
 
-      signInWithEmailAndPassword(this.auth, this.email, this.password);
+      signInWithEmailAndPassword(this.dataAuth.authData, this.email, this.password);
       this.router.navigate(['home']);
       
     }).catch((e) => {
@@ -53,6 +56,10 @@ export class RegistroComponent {
 
         case 'auth/missing-email':
           this.errorMessage = "Falta completar el campo del email. Reintente...";
+          break;
+
+        default:
+          this.errorMessage = "Hubo un error en el registro del usuario. Reintente..."
           break;
 
       }

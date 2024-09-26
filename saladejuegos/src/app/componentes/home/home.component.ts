@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Auth , signOut} from '@angular/fire/auth';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+
+  dataAuth = inject(AuthService);
 
   constructor(private router: Router, public auth:Auth){
 
@@ -22,8 +25,8 @@ export class HomeComponent {
   }
 
   LogOut(){
-    signOut(this.auth).then(() => {
+    signOut(this.dataAuth.authData).then(() => {
       this.router.navigate(['login'])
-    })
+    }).catch
   }
 }

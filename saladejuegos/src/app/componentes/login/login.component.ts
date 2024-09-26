@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { Auth , signInWithEmailAndPassword} from '@angular/fire/auth';
 import { Firestore , addDoc, collection, collectionData} from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { Route, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { dateTimestampProvider } from 'rxjs/internal/scheduler/dateTimestampProvider';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,13 +18,15 @@ export class LoginComponent {
   password:string = '';
   errorMessage:string = '';
 
-  constructor(private router: Router, private firestore: Firestore, public auth:Auth){
+  dataAuth = inject(AuthService);
+
+  constructor(private router: Router, private firestore: Firestore){
 
   }
 
   Login(path:string){
     
-    signInWithEmailAndPassword(this.auth, this.email, this.password).then((res) => {
+    signInWithEmailAndPassword(this.dataAuth.authData, this.email, this.password).then((res) => {
 
       let col = collection(this.firestore, 'logslogin');
       addDoc(col, {ingreso: new Date(), "usuario": this.email})
@@ -47,12 +50,8 @@ export class LoginComponent {
           this.errorMessage = "Falta completar el campo de la contraseña. Reintente...";
           break;
 
-        case 'auth/email-already-in-use':
-          this.errorMessage = "El email ya se encuentra registrado. Reintente...";
-          break;
-
-        case 'auth/missing-email':
-          this.errorMessage = "Falta completar el campo del email. Reintente...";
+        default:
+          this.errorMessage = "Hubo un error en el login. Reintente...";
           break;
       }
 
