@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter, inject} from '@angular/core';
-import { Auth , createUserWithEmailAndPassword, signInWithEmailAndPassword} from '@angular/fire/auth';
+import { Component, inject} from '@angular/core';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Auth , signOut} from '@angular/fire/auth';
+import { signOut} from '@angular/fire/auth';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -14,7 +14,7 @@ export class HomeComponent {
 
   dataAuth = inject(AuthService);
 
-  constructor(private router: Router, public auth:Auth){
+  constructor(private router: Router){
 
   }
 

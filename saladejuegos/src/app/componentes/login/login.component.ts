@@ -1,8 +1,8 @@
 import { Component, inject} from '@angular/core';
-import { Auth , signInWithEmailAndPassword} from '@angular/fire/auth';
+import { signInWithEmailAndPassword} from '@angular/fire/auth';
 import { Firestore , addDoc, collection, collectionData} from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
-import { Route, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { dateTimestampProvider } from 'rxjs/internal/scheduler/dateTimestampProvider';
 import { AuthService } from '../../services/auth.service';
 
