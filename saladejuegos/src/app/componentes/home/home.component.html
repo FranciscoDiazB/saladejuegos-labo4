@@ -4,5 +4,17 @@
 
 
         <button (click)="goToQuienSoy()" class="btn btn-primary" style="position: fixed ;top: 10%; left: 85%; font-size: 15px;">Quien Soy</button>
+
+        @if(auth.currentUser?.email){
+
+            <div class="divUser">
+
+                <p style="color: aliceblue;">Usuario: {{auth.currentUser?.email}}</p>
+
+                <button class="btn" style="position: fixed; top: 79%; right: 13%;" (click)="LogOut()" >Cerrar Sesión</button>
+
+            </div>
+
+        }
     </div>
 </div>

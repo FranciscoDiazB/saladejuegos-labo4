@@ -8,6 +8,8 @@
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
 .btn-block { width: 100%; display:block; }
 
+.btn-primary-logout{background-color: rgb(0, 255, 34);}
+
 
 .home { 
 	font-family: 'Open Sans', sans-serif;
@@ -32,4 +34,10 @@
 .divHome{
 	background-image: url('fondoHome.jpg');
 	height: 98vh;
+}
+
+.divUser{
+    position: fixed;
+    top: 80%;
+    right: 20%;
 }

@@ -3,13 +3,15 @@
         <h1>Registro</h1>
     
         <form>
-            <input type="text" name="n" placeholder="Nombre"/>
-            <input type="text" name="u" placeholder="Email"/>
-            <input type="password" name="p" placeholder="Contraseña"/>
-            <button class="btn btn-primary btn-block btn-large">Registrar Nuevo Usuario</button>
+            <input type="text" name="u" placeholder="Email" [(ngModel)]="email" />
+            <input type="password" name="p" placeholder="Contraseña" [(ngModel)]="password" />
+            <button class="btn btn-primary btn-block btn-large" (click)="Register()" >Registrar Nuevo Usuario</button>
         </form>
 
-        <br><p style="text-align: center; color: azure;">Ya se encuentra registrado el usuario. Reingrese nuevos datos</p>
+        
+        @if (flagError) {
+            <br><p style="text-align: center; color: azure;">{{errorMessage}}</p>
+        }
         
         <div class="btnVolver">
             <button class="btn btn-primary" (click)="goBackLogin('login')">Volver</button>

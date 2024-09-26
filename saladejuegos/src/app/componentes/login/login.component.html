@@ -5,14 +5,17 @@
         <form>
             <input type="text" name="u" placeholder="Email" [(ngModel)]="email"/>
             <input type="password" name="p" placeholder="Contraseña" [(ngModel)]="password"/>
-            <button (click)="login('home')" class="btn btn-primary btn-block btn-large">Ingresar</button>
+            <button (click)="Login('home')" class="btn btn-primary btn-block btn-large">Ingresar</button>
         </form>
 
         <a href="registro"><br><p style="text-align: center; color: #00aeff;">¿No tiene cuenta? Registre un nuevo usuario</p></a>
 
-        @if (flagMsg != '') {
-            <br><p style="text-align: center; color: azure;">{{flagMsg}}</p>
+        @if (errorMessage != '') {
+           <br> <p style="text-align: center; color: azure;">{{errorMessage}}</p>
         }
-    
+
+        <button class="btn btn-primary" style="position: fixed; right: 43%;" (click)="CompleteCredentialsUser('')" >Usuario Dos</button>
+        <button class="btn btn-primary" style="position: fixed; right: 50%;" (click)="CompleteCredentialsUser('diego')">Usuario Uno</button>
+
     </div>
 </div>
