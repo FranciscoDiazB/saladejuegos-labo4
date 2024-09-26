@@ -5,9 +5,9 @@ import { QuiensoyComponent } from './componentes/quiensoy/quiensoy.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: '/login', pathMatch: "full" },
-    {path: 'login', component: LoginComponent},
-    {path: 'home', component: HomeComponent},
-    {path: 'quiensoy', component: QuiensoyComponent},
-    {path: 'registro', component: RegistroComponent}
+    {path: '', redirectTo: '/login', pathMatch: "full"},
+    {path: 'login', loadComponent: () => import('./componentes/login/login.component').then((m) => m.LoginComponent)},
+    {path: 'home', loadComponent: () => import('./componentes/home/home.component').then((m) => m.HomeComponent)},
+    {path: 'quiensoy', loadComponent: () => import('./componentes/quiensoy/quiensoy.component').then((m) => m.QuiensoyComponent)},
+    {path: 'registro', loadComponent: () => import('./componentes/registro/registro.component').then((m) => m.RegistroComponent)}
 ];
