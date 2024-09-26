@@ -13,6 +13,14 @@
 	height: 98vh;
 }
 
+.titleLogin{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 40px;
+	font-style: italic;
+	text-shadow: -1px 0 #e6e6e6, 0 1px #e6e6e6, 1px 0 #e6e6e6, 0 -1px #e6e6e6;
+	color: #0a2646; text-align:center; 
+}
+
 .login { 
 	font-family: 'Open Sans', sans-serif;
 	position: fixed;
@@ -28,7 +36,6 @@
     background-color: black;
     padding: 20px;
 }
-.login h1 { color: #00aeff; text-align:center; }
 
 input { 
 	width: 95%; 
