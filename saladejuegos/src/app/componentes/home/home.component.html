@@ -1,20 +1,40 @@
+
 <div class="divHome">
     <div class="home">
-        <h1 class="titleHome">Fun Time Games</h1> <i class="fa-solid fa-user"></i>
+        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 53%;">MasterNeon Games</h1> 
+        <i class="fa-solid fa-gamepad" style="font-size: 60px; color: #0bf4f3; position: fixed; top: 9%; right: 89%;"></i>
 
 
-        <button (click)="goToQuienSoy()" class="btn btn-primary" style="position: fixed ;top: 10%; left: 85%; font-size: 15px;">Quien Soy</button>
+
+        <div class="containerGame" style="top: 40%; right: 78%;">
+            <img src="media/ahorcado.jpg" alt="" width="200px" height="200px" style="margin-right: 40px;">
+            <h1 class="h1-pink" style="text-align: center; color: aliceblue; font-size: 25px;">Ahorcado</h1>
+        </div>
+
+        <div class="containerGame" style="top: 40%; right: 63%;">
+            <img src="media/mayormenor.jpg" alt="" width="200px" height="200px" style="margin-right: 40px;">
+            <h1 class="h1-pink" style="text-align: center; color: aliceblue; font-size: 25px;">Menor o Mayor</h1>
+        </div>
+
+        <div class="containerGame" style="top: 40%; right: 48%;">
+            <img src="media/preguntados.jpg" alt="" width="200px" height="200px" style="margin-right: 40px;">
+            <h1 class="h1-pink" style="text-align: center; color: aliceblue; font-size: 25px;">Preguntados</h1>
+        </div>
+
+
+
+        <button (click)="goToQuienSoy()" class="custom-btn btn-2" style="position: fixed ;top: 10%; left: 85%; font-size: 15px;">Quien Soy</button>
 
         @if(dataAuth.authData.currentUser?.email){
 
             <div class="divUser">
 
-                <p style="color: aliceblue;">Usuario: {{dataAuth.authData.currentUser?.email}}</p>
 
-                <button class="btn" style="position: fixed; top: 79%; right: 13%;" (click)="LogOut()" >Cerrar Sesión</button>
+                <p style=" position: fixed; top: 88%; right: 14%; border: 1px solid rgba(243, 19, 224, 0.94);background-color: #42083d; color: #0bf4f3; padding: 5px; text-align: center;">Usuario: {{dataAuth.authData.currentUser?.email}}</p>
+
+                <button class="custom-btn btn-2" style="position: fixed; top: 88.1%; right: 4%;" (click)="LogOut()" >Cerrar Sesión</button>
 
             </div>
-
         }
     </div>
 </div>

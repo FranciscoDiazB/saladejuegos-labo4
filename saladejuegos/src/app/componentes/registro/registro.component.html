@@ -1,21 +1,20 @@
 <div class="divLogin">
     <div class="login">
-        <h1 class="titleRegister">Registro</h1>
+        <h1 style="font-size: 50px;">Registro</h1>
     
         <form>
-            <input type="text" name="u" placeholder="Email" [(ngModel)]="email" />
-            <input type="password" name="p" placeholder="Contraseña" [(ngModel)]="password" />
-            <button class="btn btn-primary btn-block btn-large" (click)="Register()" >Registrar Nuevo Usuario</button>
+            <input class="data-input" type="text" name="u" placeholder="Email" [(ngModel)]="email" />
+            <input class="data-input" type="password" name="p" placeholder="Contraseña" [(ngModel)]="password" />
+            <button (click)="Register()" class="custom-btn btn-2" style="width: 100%; font-size: 20px;">Registrar Nuevo Usuario</button>
         </form>
 
         
+        <a href="login"><br><p style="text-align: center; color: #0bf4f3">¿Ya tiene una cuenta? Inicie Sesión...</p></a>
+
         @if (flagError) {
-            <br><p style="text-align: center; color: azure;">{{errorMessage}}</p>
+            <p style="font-size: 18px; border: 1px solid rgba(243, 19, 224, 0.94);background-color: #42083d; ; color: #0bf4f3; padding: 5px; text-align: center;">{{errorMessage}}</p>
         }
         
-        <div class="btnVolver">
-            <button class="btn btn-primary" (click)="goBackLogin('login')">Volver</button>
-        </div>
 
     
     </div>

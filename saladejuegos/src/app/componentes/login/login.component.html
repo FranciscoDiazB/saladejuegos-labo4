@@ -1,21 +1,21 @@
 <div class="divLogin">
     <div class="login">
-        <h1 class="titleLogin">Login</h1>
-    
+        <h1 style="font-size: 50px;">Login</h1>
         <form>
-            <input type="text" name="u" placeholder="Email" [(ngModel)]="email"/>
-            <input type="password" name="p" placeholder="Contraseña" [(ngModel)]="password"/>
-            <button (click)="Login('home')" class="btn btn-primary btn-block btn-large">Ingresar</button>
+            <input class="data-input" type="text" name="u" placeholder="Email" [(ngModel)]="email"/>
+            <input class="data-input" type="password" name="p" placeholder="Contraseña" [(ngModel)]="password"/>
+            <button (click)="Login('home')" class="custom-btn btn-2" style="width: 100%; font-size: 20px;">Ingresar</button>
         </form>
 
-        <a href="registro"><br><p style="text-align: center; color: #00aeff;">¿No tiene cuenta? Registre un nuevo usuario</p></a>
+        <a href="registro"><br><p style="text-align: center; color: #0bf4f3;">¿No tiene una cuenta? Registre un nuevo usuario...</p></a>
+
+        <button class="custom-btn btn-2" style="position: fixed; right: 20%; font-size: 15px;" (click)="CompleteCredentialsUser('')" >Usuario Dos</button>
+        <button class="custom-btn btn-2" style="position: fixed; right: 57%; font-size: 15px;" (click)="CompleteCredentialsUser('diego')">Usuario Uno</button>
 
         @if (errorMessage != '') {
-           <br> <p style="text-align: center; color: azure;">{{errorMessage}}</p>
+           <br><br><br><p style="font-size: 18px; border: 1px solid rgba(243, 19, 224, 0.94);background-color: #42083d; ; color: #0bf4f3; padding: 5px; text-align: center;">{{errorMessage}}</p>
         }
 
-        <button class="btn btn-primary" style="position: fixed; right: 43%;" (click)="CompleteCredentialsUser('')" >Usuario Dos</button>
-        <button class="btn btn-primary" style="position: fixed; right: 50%;" (click)="CompleteCredentialsUser('diego')">Usuario Uno</button>
 
     </div>
 </div>
