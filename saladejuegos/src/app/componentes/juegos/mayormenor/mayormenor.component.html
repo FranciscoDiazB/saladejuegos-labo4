@@ -1,8 +1,8 @@
 <div class="divHome">
     <div class="home">
-        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 57%;">MAYOR O MENOR</h1>
+        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 52%;">MAYOR O MENOR</h1>
         <img src="media/mayormenorMini.jpg" alt=""
-            style="position: fixed; top: 8%; right: 90%; border: 1px solid rgba(243, 19, 224, 0.94)">
+            style="position: fixed; top: 8%; right: 85%; border: 1px solid rgba(243, 19, 224, 0.94)">
 
 
         @if(flagStartGame == false){
@@ -48,7 +48,8 @@
 
         </div>
 
-        <div class="card" style="top: 20%; right: 7%; z-index: 1000; border: 2px solid; border-color: rgba(243, 19, 224, 0.94); box-shadow: 0px 0px 20px 1px rgba(243, 19, 224, 0.94)">
+        <div class="card"
+            style="top: 20%; right: 7%; z-index: 1000; border: 2px solid; border-color: rgba(243, 19, 224, 0.94); box-shadow: 0px 0px 20px 1px rgba(243, 19, 224, 0.94)">
             <img src="media/deck.jpg">
         </div>
 
@@ -69,17 +70,20 @@
 
         @if(this.flagSuccess){
 
-            <i class="fa-solid fa-thumbs-up thumbsUpDownEqual" id="thumsUp" style="font-size: 60px; color: #0bf4f3; border: 2px solid; border-color: #0bf4f3;"></i>>
+        <i class="fa-solid fa-thumbs-up thumbsUpDownEqual" id="thumsUp"
+            style="font-size: 60px; color: #0bf4f3; border: 2px solid; border-color: #0bf4f3;"></i>>
         }
 
         @if (this.flagError) {
 
-            <i class="fa-solid fa-thumbs-down thumbsUpDownEqual" id="thumbsDown" style="font-size: 60px; color: rgba(243, 19, 224, 0.94); border: 2px solid; border-color: rgba(243, 19, 224, 0.94)"></i>
+        <i class="fa-solid fa-thumbs-down thumbsUpDownEqual" id="thumbsDown"
+            style="font-size: 60px; color: rgba(243, 19, 224, 0.94); border: 2px solid; border-color: rgba(243, 19, 224, 0.94)"></i>
         }
 
         @if (this.flagDraw) {
 
-            <i class="fa-solid fa-equals thumbsUpDownEqual" id="equal" style="font-size: 60px; color: darkgray; border: 2px solid; border-color: darkgray"></i>
+        <i class="fa-solid fa-equals thumbsUpDownEqual" id="equal"
+            style="font-size: 60px; color: darkgray; border: 2px solid; border-color: darkgray"></i>
         }
 
 
@@ -90,40 +94,40 @@
                 @if (this.randomCard.numero == 1) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">A</h1>
                         <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 11) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15% ; color: aliceblue; font-size: 35px;">J</h1>
                         <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15% ; color: aliceblue; font-size: 65px;">J</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 12) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">Q</h1>
                         <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 13) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">K</h1>
                         <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
     
                     </div>
                 }
                 @else {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">{{this.randomCard.numero}}</h1>
                         <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
     
                     </div>
                 }
@@ -135,40 +139,40 @@
                 @if (this.randomCard.numero == 1) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">A</h1>
                         <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 11) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">J</h1>
                         <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">J</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 12) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">Q</h1>
                         <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 13) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">K</h1>
                         <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
     
                     </div>
                 }
                 @else {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">{{this.randomCard.numero}}</h1>
                         <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
     
                     </div>
                 }
@@ -179,40 +183,40 @@
                 @if (this.randomCard.numero == 1) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">A</h1>
                         <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 11) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15% ; color: aliceblue; font-size: 35px;">J</h1>
                         <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15% ; color: aliceblue; font-size: 65px;">J</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 12) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">Q</h1>
                         <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 13) {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">K</h1>
                         <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
     
                     </div>
                 }
                 @else {
                     <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">{{this.randomCard.numero}}</h1>
                         <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
     
                     </div>
                 }
@@ -223,47 +227,207 @@
                 @if (this.randomCard.numero == 1) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">A</h1>
                         <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 11) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">J</h1>
                         <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">J</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 12) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">Q</h1>
                         <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
     
                     </div>
                 }
                 @else if (this.randomCard.numero == 13) {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">K</h1>
                         <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
     
                     </div>
                 }
                 @else {
                     <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
                 
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">{{this.randomCard.numero}}</h1>
                         <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
-                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
     
                     </div>
                 }
             }
         }
 
-        <h1 class="h1-teal" style="position: fixed; top: 85%; right: 20%; color: aliceblue; font-size: 35px; z-index: 1300;">Puntuación: {{this.points}}</h1>
+
+        <!-- @if (this.randomCard.numero == 1) {
+        <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+
+            <h1 class="h1-pink"
+            style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">A</h1>
+
+            @switch (this.randomCard.palo) {
+
+                @case ('Corazon') {
+                    <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                }
+
+                @case ('Pica') {
+
+                    <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                }
+
+                @case ('Trebol') {
+
+                    <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                }
+
+                @case ('Diamante') {
+
+                    <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                }
+
+            }
+        </div>
+        }
+        @else if (this.randomCard.numero == 11) {
+        <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+
+            <h1 class="h1-pink"
+                style="text-align: center; position: relative; top: 15% ; color: aliceblue; font-size: 35px;">J</h1>
+
+                @switch (this.randomCard.palo) {
+
+                    @case ('Corazon') {
+                        
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Pica') {
+    
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Trebol') {
+    
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Diamante') {
+    
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                }
+        </div>
+        }
+        @else if (this.randomCard.numero == 12) {
+        <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+
+            <h1 class="h1-pink"
+                style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">Q</h1>
+
+
+                @switch (this.randomCard.palo) {
+
+                    @case ('Corazon') {
+                        
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Pica') {
+    
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Trebol') {
+    
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Diamante') {
+    
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                }
+        </div>
+        }
+        @else if (this.randomCard.numero == 13) {
+        <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+
+            <h1 class="h1-pink"
+                style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">K</h1>
+                
+                @switch (this.randomCard.palo) {
+
+                    @case ('Corazon') {
+                        
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Pica') {
+    
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Trebol') {
+    
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Diamante') {
+    
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                }
+        </div>
+        }
+        @else {
+        <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+
+            <h1 class="h1-pink"
+                style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 35px;">
+                {{this.randomCard.numero}}</h1>
+                @switch (this.randomCard.palo) {
+
+                    @case ('Corazon') {
+                        
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Pica') {
+    
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Trebol') {
+    
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                    @case ('Diamante') {
+    
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    }
+    
+                }
+
+        </div>
+        } -->
+
+        <h1 class="h1-teal"
+            style="position: fixed; top: 85%; right: 20%; color: aliceblue; font-size: 35px; z-index: 1300;">Puntuación:
+            {{this.points}}</h1>
 
 
 

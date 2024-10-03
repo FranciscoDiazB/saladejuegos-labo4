@@ -17,7 +17,7 @@ export class AhorcadoComponent implements OnInit {
   dataAuth = inject(AuthService);
   flagStartGame:boolean = false;
   flagWrongLetter:boolean = false;
-  guessingWords:string[] = ['MARIANO','JORGE','CACATUA','SOL','MELANCOLIA']; 
+  guessingWords:string[] = ['ERRADO','PRODIGIO','TRASLADAR','TRONCO','MELANCOLIA']; 
   errorNumber:number = 0;
   randomNumber!:number;
   randomWord!:string;
@@ -54,7 +54,7 @@ export class AhorcadoComponent implements OnInit {
 
     if(this.rightLetter == this.randomWord.length){
       
-      this.pickRandomWord();
+      //this.pickRandomWord();
       this.rightLetter = 0;
       this.guessedWordRight = true;
       this.points += 50;

@@ -1,0 +1,1 @@
+import{Xa as o,Ya as a,bb as s,da as n,ib as p}from"./chunk-6R7DXF75.js";var r=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-preguntados"]],standalone:!0,features:[p],decls:2,vars:0,template:function(e,m){e&1&&(o(0,"p"),s(1,"preguntados works!"),a())}})};export{r as PreguntadosComponent};

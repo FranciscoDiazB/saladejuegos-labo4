@@ -1,8 +1,8 @@
 <div class="divHome">
     <div class="home">
-        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 67%;">AHORCADO</h1>
+        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 62%;">AHORCADO</h1>
         <img src="media/ahorcadoMini.jpg" alt=""
-            style="position: fixed; top: 8%; right: 90%; border: 1px solid rgba(243, 19, 224, 0.94)">
+            style="position: fixed; top: 8%; right: 85%; border: 1px solid rgba(243, 19, 224, 0.94)">
 
 
         @if(flagStartGame == false){
@@ -17,7 +17,7 @@
 
 
         @if(flagStartGame){
-            
+
 
         <h1 class="h1-teal" style="position: fixed; top: 85%; right: 20%; color: aliceblue; font-size: 35px; z-index: 1300;"></h1>
 
@@ -27,7 +27,7 @@
         }
 
         <h1 class="h1-teal"
-            style="position: fixed; top: 85%; right: 20%; color: aliceblue; font-size: 35px; z-index: 1300;">Puntuación:
+            style="position: fixed; top: 85%; right: 15%; color: aliceblue; font-size: 35px; z-index: 1600;">Puntuación:
             {{this.points}}</h1>
 
         @for (item of this.positionLetterRepeated; track $index) {
@@ -93,8 +93,13 @@
             <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('M')" style="top: 73%; left: 44%; width: 90px">M</button>
         }
 
+        @if(guessedWordRight){
 
-
+            <div>
+                <img src="media/winner.jpg" id="winner" alt=""
+                style="position: fixed; top: 1.8%; left: 10%; height: 710px; z-index: 1300; border: 1px solid #0bf4f3;">
+            </div>
+        }
 
         <div>
             <div class="platform"></div>
