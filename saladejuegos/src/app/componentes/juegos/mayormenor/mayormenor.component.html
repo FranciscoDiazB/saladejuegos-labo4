@@ -1,0 +1,298 @@
+<div class="divHome">
+    <div class="home">
+        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 57%;">MAYOR O MENOR</h1>
+        <img src="media/mayormenorMini.jpg" alt=""
+            style="position: fixed; top: 8%; right: 90%; border: 1px solid rgba(243, 19, 224, 0.94)">
+
+
+        @if(flagStartGame == false){
+        <div>
+            <img class="startGame" src="media/playButton.jpg" alt="" (click)="startGame()"
+                style="position: fixed; top: 27%; right: 33%; border: 1px solid rgba(243, 19, 224, 0.94)">
+            <h1 class="h1-pink" style="color: aliceblue; position: fixed; top: 80%; right: 32.5%;">Oprima el botón para
+                comenzar a jugar</h1>
+        </div>
+        }
+        @else {
+
+        <h1 class="h1-pink" style="text-align: center; font-size: 45px; position: fixed;top: 35%; left: 11.5%;">VIDAS:
+            {{this.remainingLives}}</h1>
+
+        <div class="lives" style="top: 50%; left: 10%;">
+
+            @if (remainingLives >= 1) {
+            <img src="media/cora.jpg" style="margin-right: 10px;">
+            }
+            @if(remainingLives >=2) {
+            <img src="media/cora.jpg" style="margin-right: 10px;">
+            }
+            @if(
+            remainingLives >=3) {
+            <img src="media/cora.jpg">
+            }
+
+        </div>
+
+        <div class="lives" style="top: 65%; left: 10%;">
+
+            @if (remainingLives >= 4) {
+            <img src="media/cora.jpg" style="margin-right: 10px;">
+            }
+            @if(remainingLives >=5) {
+            <img src="media/cora.jpg" style="margin-right: 10px;">
+            }
+            @if(
+            remainingLives >=6) {
+            <img src="media/cora.jpg">
+            }
+
+        </div>
+
+        <div class="card" style="top: 20%; right: 7%; z-index: 1000; border: 2px solid; border-color: rgba(243, 19, 224, 0.94); box-shadow: 0px 0px 20px 1px rgba(243, 19, 224, 0.94)">
+            <img src="media/deck.jpg">
+        </div>
+
+        <!-- @for (item of this.cardDeck; track $index) {
+
+            <h1>{{$index}}</h1>
+
+            @if(this.randomNumber == $index){
+
+                <div class="card cardAnimated" style="top: 20%; right: 25%;">
+                
+                    <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                    <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%">{{this.randomCard.numero}}</h1>
+
+                </div>
+            }
+        } -->
+
+        @if(this.flagSuccess){
+
+            <i class="fa-solid fa-thumbs-up thumbsUpDownEqual" id="thumsUp" style="font-size: 60px; color: #0bf4f3; border: 2px solid; border-color: #0bf4f3;"></i>>
+        }
+
+        @if (this.flagError) {
+
+            <i class="fa-solid fa-thumbs-down thumbsUpDownEqual" id="thumbsDown" style="font-size: 60px; color: rgba(243, 19, 224, 0.94); border: 2px solid; border-color: rgba(243, 19, 224, 0.94)"></i>
+        }
+
+        @if (this.flagDraw) {
+
+            <i class="fa-solid fa-equals thumbsUpDownEqual" id="equal" style="font-size: 60px; color: darkgray; border: 2px solid; border-color: darkgray"></i>
+        }
+
+
+        @switch (this.randomCard.palo) {
+
+            @case ('Corazon') {
+
+                @if (this.randomCard.numero == 1) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 11) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15% ; color: aliceblue; font-size: 65px;">J</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 12) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 13) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
+    
+                    </div>
+                }
+                @else {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/coraImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
+    
+                    </div>
+                }
+
+            }
+
+            @case ('Pica') {
+
+                @if (this.randomCard.numero == 1) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 11) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">J</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 12) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 13) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
+    
+                    </div>
+                }
+                @else {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/picaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
+    
+                    </div>
+                }
+            }
+
+            @case ('Diamante') {
+
+                @if (this.randomCard.numero == 1) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 11) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15% ; color: aliceblue; font-size: 65px;">J</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 12) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 13) {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
+    
+                    </div>
+                }
+                @else {
+                    <div class="card cardAnimatedPink" style="top: 20%; right: 25%;">
+                
+                        <img src="media/diaImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-pink" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
+    
+                    </div>
+                }
+            }
+
+            @case ('Trebol') {
+
+                @if (this.randomCard.numero == 1) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">A</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 11) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">J</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 12) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">Q</h1>
+    
+                    </div>
+                }
+                @else if (this.randomCard.numero == 13) {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">K</h1>
+    
+                    </div>
+                }
+                @else {
+                    <div class="card cardAnimatedTeal" style="top: 20%; right: 25%;">
+                
+                        <img src="media/treImg.jpg" alt="" style="position: fixed; top: 38%; left: 62.5%;">
+                        <h1 class="h1-teal" style="text-align: center; position: relative; top: 15%; color: aliceblue; font-size: 65px;">{{this.randomCard.numero}}</h1>
+    
+                    </div>
+                }
+            }
+        }
+
+        <h1 class="h1-teal" style="position: fixed; top: 85%; right: 20%; color: aliceblue; font-size: 35px; z-index: 1300;">Puntuación: {{this.points}}</h1>
+
+
+
+
+        <div class="containerArrow up" id="contUp" style="top: 30%; right: 55%;">
+            <img src="media/upArrow.jpg" id="upArrow" aria-disabled="false"
+                (click)="playGameMayorMenor('HIGHER', false)" width="200px" height="200px" style="margin-right: 40px;">
+        </div>
+
+        <h1 class="h1-teal"
+            style="text-align: center; color: aliceblue; font-size: 25px; position: fixed;top: 21%; right: 59%;">Mayor
+        </h1>
+
+        <div class="containerArrow down" id="contDown" style="top: 60%; right: 55%;">
+            <img src="media/downArrow.jpg" id="downArrow" (click)="playGameMayorMenor('LOWER', false)" width="200px"
+                height="200px" style="margin-right: 40px;">
+        </div>
+
+        @if(this.remainingLives <= 0){ <div>
+            <img src="media/gameOver.jpg" id="gameOver" alt=""
+                style="position: fixed; top: 1.8%; left: 5%; height: 710px; z-index: 1100; border: 1px solid #0bf4f3;">
+    </div>
+    <button (click)="restartGame()" style="position: fixed; top: 90%; left: 10%;">Reset</button>
+    }
+
+    <h1 class="h1-pink"
+        style="text-align: center; color: aliceblue; font-size: 25px; position: fixed;top: 87%; right: 59%;">Menor</h1>
+    }
+
+
+</div>
+</div>

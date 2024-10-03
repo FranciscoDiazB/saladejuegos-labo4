@@ -1,0 +1,188 @@
+<div class="divHome">
+    <div class="home">
+        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 67%;">AHORCADO</h1>
+        <img src="media/ahorcadoMini.jpg" alt=""
+            style="position: fixed; top: 8%; right: 90%; border: 1px solid rgba(243, 19, 224, 0.94)">
+
+
+        @if(flagStartGame == false){
+        <div>
+            <img class="startGame" src="media/playButton.jpg" alt="" (click)="startGame()"
+                style="position: fixed; top: 27%; right: 33%; border: 1px solid rgba(243, 19, 224, 0.94)">
+            <h1 class="h1-pink" style="color: aliceblue; position: fixed; top: 80%; right: 32.5%;">Oprima el botón para
+                comenzar a jugar</h1>
+        </div>
+        }
+
+
+
+        @if(flagStartGame){
+            
+
+        <h1 class="h1-teal" style="position: fixed; top: 85%; right: 20%; color: aliceblue; font-size: 35px; z-index: 1300;"></h1>
+
+            
+        @for(char of this.randomWord; track $index) {
+        <h1>{{this.randomWord[$index]}}</h1>
+        }
+
+        <h1 class="h1-teal"
+            style="position: fixed; top: 85%; right: 20%; color: aliceblue; font-size: 35px; z-index: 1300;">Puntuación:
+            {{this.points}}</h1>
+
+        @for (item of this.positionLetterRepeated; track $index) {
+
+            <div [ngSwitch]="item.idx">
+
+                <h1 class="h1-pink" *ngSwitchCase="0" style="position: fixed; top: 29%; right: 85.3%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="1" style="position: fixed; top: 29%; right: 81.3%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="2" style="position: fixed; top: 29%; right: 77.4%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="3" style="position: fixed; top: 29%; right: 73.4%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="4" style="position: fixed; top: 29%; right: 69.4%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="5" style="position: fixed; top: 29%; right: 65.4%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="6" style="position: fixed; top: 29%; right: 61.4%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="7" style="position: fixed; top: 29%; right: 57.4%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="8" style="position: fixed; top: 29%; right: 53.4%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+                <h1 class="h1-pink" *ngSwitchCase="9" style="position: fixed; top: 29%; right: 49.5%; color: aliceblue; font-size: 45px; z-index: 1300;">{{item.letra}}</h1>
+
+            </div>
+        }
+
+
+        <div class="letterSpace" style="right: 85%;" *ngIf="this.randomWord.length >= 1"></div>
+        <div class="letterSpace" style="right: 81%;" *ngIf="this.randomWord.length >= 2"></div>
+        <div class="letterSpace" style="right: 77%;" *ngIf="this.randomWord.length >= 3"></div>
+        <div class="letterSpace" style="right: 73%;" *ngIf="this.randomWord.length >= 4"></div>
+        <div class="letterSpace" style="right: 69%;" *ngIf="this.randomWord.length >= 5"></div>
+        <div class="letterSpace" style="right: 65%;" *ngIf="this.randomWord.length >= 6"></div>
+        <div class="letterSpace" style="right: 61%;" *ngIf="this.randomWord.length >= 7"></div>
+        <div class="letterSpace" style="right: 57%;" *ngIf="this.randomWord.length >= 8"></div>
+        <div class="letterSpace" style="right: 53%;" *ngIf="this.randomWord.length >= 8"></div>
+        <div class="letterSpace" style="right: 49%;" *ngIf="this.randomWord.length >= 10"></div>
+
+        <div style="padding: 30px; border: solid 1px #0bf4f3; position: fixed; top: 57%; left: 18.5%; height: 120px; width: 473px;"></div>
+
+        @if (!guessedWordRight) {
+
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('Q')" style="top: 60%; left: 20%; width: 40px">Q</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('W')" style="top: 60%; left: 23%; width: 40px">W</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('E')" style="top: 60%; left: 26%; width: 40px">E</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('R')" style="top: 60%; left: 29%; width: 40px">R</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('T')" style="top: 60%; left: 32%; width: 40px">T</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('Y')" style="top: 60%; left: 35%; width: 40px">Y</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('U')" style="top: 60%; left: 38%; width: 40px">U</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('I')" style="top: 60%; left: 41%; width: 40px">I</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('O')" style="top: 60%; left: 44%; width: 40px">O</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('P')" style="top: 60%; left: 47%; width: 40px">P</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('A')" style="top: 66.5%; left: 20%; width: 40px">A</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('S')" style="top: 66.5%; left: 23%; width: 40px">S</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('D')" style="top: 66.5%; left: 26%; width: 40px">D</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('F')" style="top: 66.5%; left: 29%; width: 40px">F</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('G')" style="top: 66.5%; left: 32%; width: 40px">G</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('H')" style="top: 66.5%; left: 35%; width: 40px">H</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('J')" style="top: 66.5%; left: 38%; width: 40px">J</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('K')" style="top: 66.5%; left: 41%; width: 40px">K</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('L')" style="top: 66.5%; left: 44%; width: 40px">L</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('Ñ')" style="top: 66.5%; left: 47%; width: 40px">Ñ</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('Z')" style="top: 73%; left: 20%; width: 90px">Z</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('X')" style="top: 73%; left: 26%; width: 40px">X</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('C')" style="top: 73%; left: 29%; width: 40px">C</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('V')" style="top: 73%; left: 32%; width: 40px">V</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('B')" style="top: 73%; left: 35%; width: 40px">B</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('N')" style="top: 73%; left: 38%; width: 90px">N</button>
+            <button class="custom-btn btn-2-teal" onclick="this.disabled = true" (click)="guessLetter('M')" style="top: 73%; left: 44%; width: 90px">M</button>
+        }
+
+
+
+
+        <div>
+            <div class="platform"></div>
+            <div class="pole1"></div>
+            <div class="pole2"></div>
+            <div class="pole3"></div>
+            <div class="noose"></div>
+        </div>
+
+        @if(flagWrongLetter){
+
+
+        <div class="stickman">
+            @switch (errorNumber) {
+
+            @case (1) {
+            <div class="head"></div>
+
+            }
+            @case (2) {
+            <div class="head"></div>
+            <div class="torso"></div>
+            }
+            @case (3) {
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            }
+            @case (4) {
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            }
+            @case (5) {
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="leftleg"></div>
+            }
+            @case (6) {
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="leftleg"></div>
+            <div class="leftfoot"></div>
+            }
+            @case (7) {
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="leftleg"></div>
+            <div class="leftfoot"></div>
+            <div class="rightleg"></div>
+            }
+            @case (8) {
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="leftleg"></div>
+            <div class="leftfoot"></div>
+            <div class="rightleg"></div>
+            <div class="rightfoot"></div>
+            }
+            @default {
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="leftleg"></div>
+            <div class="leftfoot"></div>
+            <div class="rightleg"></div>
+            <div class="rightfoot"></div>
+            <div class="deadHangManEyes" style="transform: rotate(45deg); top: 40.7%; left: 64.3%;"></div>
+            <div class="deadHangManEyes" style="transform: rotate(-45deg); top: 40.7%; left: 64.3%;"></div>
+            <div class="deadHangManEyes" style="transform: rotate(45deg); top: 40.7%; left: 65.6%;"></div>
+            <div class="deadHangManEyes" style="transform: rotate(-45deg); top: 40.7%; left: 65.6%;"></div>
+            <div class="deadHangManMouth"></div>
+            <div class="gameOver">
+            </div>
+            }
+            }
+        </div>
+        }
+        }
+    </div>
+</div>

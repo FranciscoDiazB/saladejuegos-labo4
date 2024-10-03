@@ -9,5 +9,8 @@ export const routes: Routes = [
     {path: 'login', loadComponent: () => import('./componentes/login/login.component').then((m) => m.LoginComponent)},
     {path: 'home', loadComponent: () => import('./componentes/home/home.component').then((m) => m.HomeComponent)},
     {path: 'quiensoy', loadComponent: () => import('./componentes/quiensoy/quiensoy.component').then((m) => m.QuiensoyComponent)},
-    {path: 'registro', loadComponent: () => import('./componentes/registro/registro.component').then((m) => m.RegistroComponent)}
+    {path: 'registro', loadComponent: () => import('./componentes/registro/registro.component').then((m) => m.RegistroComponent)},
+    {path: 'ahorcado', loadComponent: () => import('./componentes/juegos/ahorcado/ahorcado.component').then((m) => m.AhorcadoComponent)}, 
+    {path: 'mayormenor', loadComponent: () => import('./componentes/juegos/mayormenor/mayormenor.component').then((m) => m.MayormenorComponent)}, 
+    {path: 'preguntados', loadComponent: () => import('./componentes/juegos/preguntados/preguntados.component').then((m) => m.PreguntadosComponent)}
 ];

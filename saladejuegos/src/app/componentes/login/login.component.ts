@@ -1,4 +1,4 @@
-import { Component, inject} from '@angular/core';
+import { Component, inject, OnInit} from '@angular/core';
 import { signInWithEmailAndPassword} from '@angular/fire/auth';
 import { Firestore , addDoc, collection, collectionData} from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   email:string = '';
   password:string = '';
   errorMessage:string = '';
@@ -22,6 +22,10 @@ export class LoginComponent {
 
   constructor(private router: Router, private firestore: Firestore){
 
+  }
+
+  ngOnInit(): void {
+    console.log(this.dataAuth.authData.currentUser?.email);
   }
 
   Login(path:string){

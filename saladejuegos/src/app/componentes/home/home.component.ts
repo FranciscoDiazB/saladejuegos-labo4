@@ -20,8 +20,12 @@ export class HomeComponent {
 
   user:string = '';
 
-  goToQuienSoy(){
-    this.router.navigate(['quiensoy']);
+  openAhorcado(){
+    this.router.navigate(['ahorcado']);
+  }
+
+  openMayorMenor(){
+    this.router.navigate(['mayormenor']);
   }
 
   LogOut(){

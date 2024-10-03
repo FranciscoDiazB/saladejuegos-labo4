@@ -1,0 +1,18 @@
+<div class="nav">
+ 
+    <button class="custom-btn btn-2-teal" routerLink="home" >Home</button>
+    <button class="custom-btn btn-2-teal" routerLink="quiensoy">Quien Soy</button>
+
+    @if(dataAuth.authData.currentUser?.email == null){
+        <button class="custom-btn btn-2-teal" routerLink="login" >Login</button>
+        <button class="custom-btn btn-2-teal" routerLink="registro">Registro</button>
+    }@else{
+
+        <div class="usersession">
+            
+            <p>Usuario: {{dataAuth.authData.currentUser?.email}}</p>
+            <button class="custom-btn btn-2-teal" (click)="LogOut()" >Cerrar Sesión</button>
+        </div>
+    }
+
+  </div>

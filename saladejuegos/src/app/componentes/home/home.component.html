@@ -1,40 +1,33 @@
-
 <div class="divHome">
     <div class="home">
-        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 53%;">MasterNeon Games</h1> 
-        <i class="fa-solid fa-gamepad" style="font-size: 60px; color: #0bf4f3; position: fixed; top: 9%; right: 89%;"></i>
+        <h1 class="h1-teal" style="font-size: 60px; position: fixed; right: 60%;">NEON MASTER</h1>
+        <i class="fa-solid fa-gamepad"
+            style="font-size: 60px; color: #0bf4f3; position: fixed; top: 9%; right: 89%;"></i>
 
 
+
+        @if(dataAuth.authData.currentUser?.email){
 
         <div class="containerGame" style="top: 40%; right: 78%;">
-            <img src="media/ahorcado.jpg" alt="" width="200px" height="200px" style="margin-right: 40px;">
+            <img src="media/ahorcado.jpg" (click)="openAhorcado()" width="200px" height="200px" style="margin-right: 40px;">
             <h1 class="h1-pink" style="text-align: center; color: aliceblue; font-size: 25px;">Ahorcado</h1>
         </div>
 
         <div class="containerGame" style="top: 40%; right: 63%;">
-            <img src="media/mayormenor.jpg" alt="" width="200px" height="200px" style="margin-right: 40px;">
-            <h1 class="h1-pink" style="text-align: center; color: aliceblue; font-size: 25px;">Menor o Mayor</h1>
+            <img src="media/mayormenor.jpg" (click)="openMayorMenor()" alt="" width="200px" height="200px" style="margin-right: 40px;">
+            <h1 class="h1-pink" style="text-align: center; color: aliceblue; font-size: 25px;">Mayor o Menor</h1>
         </div>
 
         <div class="containerGame" style="top: 40%; right: 48%;">
             <img src="media/preguntados.jpg" alt="" width="200px" height="200px" style="margin-right: 40px;">
             <h1 class="h1-pink" style="text-align: center; color: aliceblue; font-size: 25px;">Preguntados</h1>
         </div>
-
-
-
-        <button (click)="goToQuienSoy()" class="custom-btn btn-2" style="position: fixed ;top: 10%; left: 85%; font-size: 15px;">Quien Soy</button>
-
-        @if(dataAuth.authData.currentUser?.email){
-
-            <div class="divUser">
-
-
-                <p style=" position: fixed; top: 88%; right: 14%; border: 1px solid rgba(243, 19, 224, 0.94);background-color: #42083d; color: #0bf4f3; padding: 5px; text-align: center;">Usuario: {{dataAuth.authData.currentUser?.email}}</p>
-
-                <button class="custom-btn btn-2" style="position: fixed; top: 88.1%; right: 4%;" (click)="LogOut()" >Cerrar Sesión</button>
-
-            </div>
+        }
+        @else {
+        <h1 class="h1-pink" style=" color: aliceblue ;font-size: 40px; position: fixed; top: 40%; right: 18%;">Para
+            poder acceder a los juegos tiene que Iniciar sesión
+            <br>o Registrar un nuevo usuario
+        </h1>
         }
     </div>
 </div>

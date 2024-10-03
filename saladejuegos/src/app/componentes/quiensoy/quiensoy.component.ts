@@ -14,9 +14,4 @@ export class QuiensoyComponent {
   constructor(private router:Router){
 
   }
-  
-  goBackHome(){
-    this.router.navigate(['home']);
-  }
-
 }

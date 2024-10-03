@@ -1,0 +1,293 @@
+.h1-teal {
+    font-family: 'Open Sans', sans-serif;
+    text-shadow:
+        0 0 5px #0bf4f3,
+        0 0 10px #0bf4f3,
+        0 0 20px #0bf4f3,
+        0 0 40px #0bf4f3,
+        0 0 80px #0bf4f3;
+}
+
+.h1-pink {
+    font-family: 'Open Sans', sans-serif;
+    text-shadow:
+        0 0 5px rgba(243, 19, 224, 0.94),
+        0 0 10px rgba(243, 19, 224, 0.94),
+        0 0 20px rgba(243, 19, 224, 0.94),
+        0 0 40px rgba(243, 19, 224, 0.94),
+        0 0 80px rgba(243, 19, 224, 0.94);
+}
+
+.divHome {
+    background-image: url('fondoJuego.jpg');
+    height: 92.15vh;
+
+}
+
+.custom-btn {
+    color: #fff;
+    height: 40px;
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: fixed;
+    display: inline-block;
+    text-align: center;
+}
+
+.custom-btn:disabled{
+    opacity: 50%;
+}
+
+.btn-2-teal {
+    color: #0bf4f3;
+    border: 1px solid #0bf4f3;
+    box-shadow:  0 0 5px #0bf4f3,  0 0 5px #0bf4f3 inset;
+}
+.btn-2-teal:before {
+    height: 0%;
+    width: 2px;
+}
+.btn-2-teal:hover {
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(243, 19, 224, 0.94), 0 0 20px rgba(243, 19, 224, 0.94) inset, 0 0 20px rgba(243, 19, 224, 0.94) inset;
+}
+
+
+.home {
+    font-family: 'Open Sans', sans-serif;
+    position: fixed;
+    top: 29%;
+    left: 15%;
+    margin: -150px 0 0 -150px;
+    border-radius: 0%;
+    width: 1600px;
+    height: 700px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(243, 19, 224, 0.94);
+    padding: 20px;
+}
+
+.stickman {
+    width: 400px;
+    height: 400px;
+    display: block;
+    position: fixed;
+    top: 35%;
+    right: 20%;
+}
+
+.head {
+    width: 50px;
+    height: 60px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 21px;
+    left: 133px;
+    ///z-index: 1;
+    ///transform-origin: center bottom;
+}
+
+.torso {
+    width: 6px;
+    height: 100px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 156px;
+}
+
+.leftleg {
+    width: 6px;
+    height: 100px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 175px;
+    left: 155px;
+    transform: rotate(12deg);
+    transform-origin: top;
+}
+
+.rightleg {
+    width: 6px;
+    height: 100px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 175px;
+    left: 157px;
+    transform: rotate(-12deg);
+    transform-origin: top;
+}
+
+.leftarm {
+    width: 100px;
+    height: 6px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 57px;
+    transform: rotate(-35deg);
+}
+
+.rightarm {
+    width: 100px;
+    height: 6px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 161px;
+    transform: rotate(35deg);
+}
+
+.leftfoot {
+    width: 45px;
+    height: 6px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 270px;
+    left: 93px;
+    transform: rotate(8deg);
+}
+
+.rightfoot {
+    width: 45px;
+    height: 6px;
+    border: 3px solid rgba(243, 19, 224, 0.94);
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 270px;
+    left: 178px;
+    transform: rotate(-8deg);
+}
+
+.deadHangManEyes{
+    width: 12px;
+    height: 4px;
+    background-color: rgba(243, 19, 224, 0.94);
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 60%;
+}
+
+.deadHangManMouth{
+    width: 30px;
+    height: 4px;
+    background-color: rgba(243, 19, 224, 0.94);
+    display: block;
+    position: fixed;
+    top: 44%;
+    left: 64.6%;
+    transform: rotate(-10deg);
+}
+
+.platform{
+    display: block;
+    width: 200px;
+    height: 55px;
+    border: 3px solid #0bf4f3;
+    background-color: black;
+    position: fixed;
+    top: 66%;
+    right: 13%;
+}
+
+.pole1{
+    display: block;
+    width: 7px;
+    height: 350px;
+    border: 3px solid #0bf4f3;
+    background-color: black;
+    position: fixed;
+    top: 18%;
+    right: 19%;
+}
+
+.pole2{
+    display: block;
+    width: 255px;
+    height: 7px;
+    border: 3px solid #0bf4f3;
+    background-color: black;
+    position: fixed;
+    top: 17%;
+    right: 19%;
+}
+
+.pole3{
+    display: block;
+    width: 7px;
+    height: 130px;
+    border: 3px solid #0bf4f3;
+    background-color: black;
+    position: fixed;
+    top: 17%;
+    right: 34.2%;
+}
+
+.noose{
+    display: block;
+    width: 80px;
+    height: 89px;
+    border: 3px solid #0bf4f3;
+    border-radius: 55%;
+    position: fixed;
+    top: 35%;
+    right: 31.9%;
+}
+
+.startGame:hover{
+	border: 2px solid;
+	border-color: rgba(243, 19, 224, 0.94);
+	box-shadow: 0px 0px 20px 1px rgba(243, 19, 224, 0.94);
+	cursor: pointer;
+}
+
+.gameOver{
+    background-image: url('../../../../../public/media/gameOver.jpg');
+    position: fixed;
+    width: 700px;
+    height: 339px;
+    top: 46%;
+    left: 13%;
+    border: 1px solid #0bf4f3;
+
+}
+
+.emptySpaceLetter{
+    display: block;
+    width: 45px;
+    height: 10px;
+    background-color: black;
+    position: fixed;
+}
+
+.letterSpace{
+    display: block;
+    width: 40px;
+    height: 7px;
+    border: 3px solid #0bf4f3;
+    background-color: black;
+    position: fixed;
+    top: 40%;
+}
